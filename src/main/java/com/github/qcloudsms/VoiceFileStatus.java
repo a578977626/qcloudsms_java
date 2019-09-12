@@ -11,7 +11,6 @@ import org.json.JSONObject;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.net.URISyntaxException;
 
 
