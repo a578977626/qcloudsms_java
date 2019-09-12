@@ -9,9 +9,8 @@ import com.github.qcloudsms.httpclient.DefaultHTTPClient;
 
 import org.json.JSONObject;
 import org.json.JSONException;
-
+import java.nio.charset.Charset;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.net.URISyntaxException;
 
 
@@ -64,8 +63,8 @@ public class VoiceFileUploader extends SmsBase {
             .addQueryParameter("time", now)
             .setConnectionTimeout(60 * 1000)
             .setRequestTimeout(60 * 1000)
-            .setBody(new String(fileContent, StandardCharsets.ISO_8859_1))
-            .setBodyCharset(StandardCharsets.ISO_8859_1);
+            .setBody(new String(fileContent, Charset.forName("ISO-8859-1")))
+            .setBodyCharset(Charset.forName("ISO-8859-1"));
 
         try {
             // May throw IOException and URISyntaxexception
